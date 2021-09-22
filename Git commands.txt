@@ -1,0 +1,71 @@
+CONFIGURATION COMMANDS
+git config --global user.name "<name>"
+git config --global user.email "<email>"
+git config --list (shows all user details)
+
+git status(see the status of working stage)
+git init(initializes a working directory as git)
+git add --a/git add .(adds all files to the stagin area)
+git commit -m "<comment>"(commits with a comment)
+git log(see all commits)
+rm -rf .git(remove git repository)
+pwd(print	 working directory)
+git clone <repository url> <foldername>(clones a repository to a local folder)
+ls(list all items in the current directory)
+cd <filename/path>(change directory)
+touch <filename>(creates a file with the desired name and extension) 
+*git ignores empty folder
+ *.<extension>(ignores all the files with this extension)
+<dir>/(ignores all the folders with this name,whether nested or not)
+/<dir>/(ignores only the outer folder with this name)
+git diff(compares the working directory to the staging area)
+git diff --staged(compares the working directory to the immediate prvs commits)
+git commit -a -m "<comment>"(commits all the tracked files directly by skipping the staged area)
+git rm <filename.extension>(removes a file and automatically adds it to the staging area)
+git mv <oldfile.extension> <newfile.extension>(renames a file and automatically adds it to the staging area[move and rename are same in linux])
+*git keeps tracking the file inspite of being added in the .gitignore file if the file is not made untracked
+git rm --cached <filename.extension>(untracks a file)
+rm -rf .git(removes a git repository and converts it back to a normal folder)
+git log -p(shows all the commmits with the lines/files which have changed)
+git log -p -<n>(shows n number of prvs commmits with the lines/files which have changed)
+git log --stat(shows a summarised view of all the commits)
+git log --pretty=oneline(shows all the commits in one line)
+git log --pretty=short(shows all the commits in short)
+*author creates a file
+*commitor commits some changes in that file
+git log --since=<n>.days(shows the the commits for last n days)
+git log --since=<n>.weeks(shows the the commits for last n weeks)
+git log --since=<n>.months(shows the the commits for last n months)
+git log --since=<n>.years(shows the the commits for last n years)
+*%h is for displaying short hashcode
+git log --pretty=format:"%h --<placeholders>"(shows the commits according to the placeholder.e.g.ae,an)
+
+(*link: https://git-scm.com/docs/git-log#Documentation/git-log.txt-emCgreenem)
+git commit --amend (amends a commit done by another person and merges the commits from staging area to the respective commit)(opens a vim editor)
+
+*Vim editor
+i (for editing) 
+esc (for finishing the editing)
+:wq (for saving the edit)
+
+git restore --staged <filename.extension>(unstages a file)
+git checkout <filename.extension>(matches the data of the last commit to the current file)(restores it)
+git checkout -f(restores all the files and matches the whole working directory to the last one)
+
+git remote -v(displays all the urls in the remote)
+git remote add origin <URL>
+git branch -M main
+git push -u origin main
+
+git config --global alias.<shortname> <functionname>(adds a short command for of a longer one)
+git checkout -b <branchName>(creates a new branch and switches to it)
+git checkout <branchName>(switches to the desired branch)
+git branch(shows all the branches)
+git merge <branchName> (merges the desired branch to the master branch)
+git branch -v(shows the name of the branches along with the hashcode and commit msg of last commit)
+git branch --merged (shows already merged branches)
+git branch --no-merged(shows the branches which are not merged anywhere)
+git branch -d <branchname>(deletes the branch only when it is merged otherwise throws an error)
+git branch -D <branchname>(deletes the branch without an error)
+git push <remotename> <branchname>(pushes a branch to github)
+git push <remotename> -d <branchname>(deletes a branch from github)
